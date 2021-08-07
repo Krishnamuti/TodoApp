@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const path = require('path')
 
 module.exports = {
     entry: './src/index.jsx',
@@ -20,7 +21,7 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin('app.css')
     ],
-    module:[{
+    module:{
         loaders: [{
             test: /.js[x]?$/,
             loader: 'babel-loader',
@@ -36,7 +37,7 @@ module.exports = {
             test: /\.woff|.woff2|.ttf|.eot|.svg*.*$/,
             loader: 'file'
         }]
-    }]
+    }
 
 }
 
