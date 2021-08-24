@@ -40,8 +40,10 @@ export default class Todo extends Component{
     
     handleAdd(){
         const description = this.state.description
-        axios.post(URL, {description})
-        .then(resp => this.refresh())
+        if(description){
+            axios.post(URL, {description})
+            .then(resp => this.refresh())
+        }     
     }
     
     handleChange(e){
